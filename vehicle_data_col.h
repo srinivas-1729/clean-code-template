@@ -1,8 +1,8 @@
 enum measure
 {
-	motor_temp,
-	battery_pc,
-	battery_temp
+	MOTOR_TEMP = 0,
+	BATTERY_PC,
+	BATTERY_TEMP
 };
 
 struct input_s
@@ -20,4 +20,4 @@ struct store_s
 	float battery_temp;
 };
 
-store_s store_vehicle_measurements(input_s);
+store_s store_vehicle_measurements(input_s vehicle_data);
