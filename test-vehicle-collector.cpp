@@ -23,6 +23,9 @@ TEST(COLLECT, reports_are_fetched_and_stored_with_vehicle_id) {
 	vehicle_data = store_vehicle_measurements(vehicle_1[1]);
 	EXPECT_NEAR(vehicle_data.battery_pc, 70, 0.02);
 	
+	// Check for invalid data.
+	ASSERT_EQ(isnan(vehicle_data.battery_temp), 1);
+	
 	// Vehicle 2 data
 	vehicle_data = store_vehicle_measurements(vehicle_2[2]);
 	EXPECT_NEAR(vehicle_data.battery_temp, 37.03, 0.2);
